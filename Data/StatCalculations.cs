@@ -129,16 +129,6 @@ namespace web_api.Data
 
             }
 
-            var obj = new Dictionary<string, object>
-            {
-                ["id"] = 43,
-                ["title"] = "Western Union",
-                ["isEnabled"] = true,
-                ["tags"] = new string[] { "things", "stuff" }
-            };
-
-            var json = JsonSerializer.Serialize(obj);
-
             var entries = frequencies.Select(d =>
                 "{" + string.Format("\"range\":{0}, \"count\":{1}", d.Key, string.Join(",", d.Value)) + "}");
                 return "[" + string.Join(",", entries) + "]";
